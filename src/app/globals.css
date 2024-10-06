@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.progress-bar-shadow {
+  box-shadow: #291911 3px 3px 6px 0px inset;
+}
+
+.progress-bar-shadow .progress {
+  background: linear-gradient(
+    to bottom,
+    #ffff00 0%,
+    #fbb03b 22%,
+    #f7931e 47%,
+    #f37830 64%,
+    #f16a3a 76%,
+    #f37433 84%,
+    #f79020 99%
+  );
+}
+
+.popup-title {
+  text-shadow: 1px 1px 2px #2f1a10;
+}
+
+.popup-title-level-up {
+  text-shadow: 0px 2px 2px #97701d;
+  /* background: radial-gradient(circle, #ffb639, #f4ba5a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; */
+}
+
+.claim-nft-button {
+  background: linear-gradient(to bottom, #ffffff 0%, #f7c790 9%, #f3ac59 13%, #ec6615 77%, #944617 100%);
+  box-shadow: 0px 1px 1px 2px #35241c;
+}

@@ -1,0 +1,72 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { FC } from "react";
+import { levelUpTextAnimationDuration } from "@/constants";
+import ExperienceBar from "./ExperienceBar";
+import ClaimNFTButton from "./ClaimNFTButton";
+import Lottie from "react-lottie";
+import * as animationData2 from "@/lottie-animations/Animation-1728070374218.json";
+import Badge from "./Badge";
+
+const FullScreenPopup: FC<FullScreenPopupProps> = ({ isOpen, onClose }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 100 }}
+          exit={{ opacity: 0, y: 100 }}
+          transition={{
+            ease: "circOut",
+            duration: 0.2,
+            // type: "spring",
+            // stiffness: 700,
+            // bounce: 1,
+          }}
+          className="fixed inset-0 bg-[url('/images/Leveluppopup-min.jpg')] bg-no-repeat bg-cover bg-center z-50 w-screen h-screen"
+        >
+          <div className="w-full h-full overflow-y-scroll p-4 relative">
+            <button className="text-white absolute top-4 right-4 z-10" onClick={onClose}>
+              Close
+            </button>
+            <div className="flex flex-col items-center h-full text-center relative pt-14 md:pt-2">
+              <div className="absolute top-0 left-0 right-0 w-full h-full">
+                <Lottie
+                  options={{ animationData: animationData2, loop: true }}
+                  ariaRole="presentation"
+                  isClickToPauseDisabled={true}
+                />
+              </div>
+              <motion.img
+                initial={{ y: 200, scale: 0 }}
+                animate={{ y: [200, -100, 50, 0], scale: [0, 1, 1, 1] }}
+                transition={{ ease: "easeOut", duration: levelUpTextAnimationDuration }}
+                src="/images/level-up.png"
+                alt="level up"
+                width={815}
+                height={183}
+                className="w-[400px]"
+              />
+              <Badge />
+              <p className="text-[#291911] text-5xl font-bold popup-title mt-12">Corporal</p>
+              <ExperienceBar totalExperienceNumber={50000} progress={20} />
+              <div className="mt-10 relative z-10">
+                <ClaimNFTButton />
+              </div>
+              <p className="mt-10 font-bold text-2xl text-[#35241C]">You've leveled up and earned a new badge!</p>
+              <p className="text-[#DCC794] mt-2">
+                Claim your <span className="text-[#FFC850] font-bold">NFT badge</span> now, or retrieve it from you intentory.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+interface FullScreenPopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default FullScreenPopup;
