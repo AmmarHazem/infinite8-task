@@ -20,6 +20,7 @@ const FullScreenPopup: FC<FullScreenPopupProps> = ({ isOpen, onClose }) => {
           animate={{ y: [200, -100, 50, 0], scale: [0, 1, 1, 1] }}
           transition={{ ease: "easeOut", duration: levelUpTextAnimationDuration }}
           src="/images/level-up.png"
+          loading="eager"
           alt="level up"
           width={815}
           height={183}

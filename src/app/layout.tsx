@@ -26,6 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/images/Leveluppopup-min.jpg" as="image" type="image/jpg" />
+        <link rel="preload" href="/images/Group1000002084qwlkejrkqwbeqvb-min.png" as="image" type="image/png" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
