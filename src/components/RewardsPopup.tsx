@@ -2,15 +2,15 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 import Popup from "./Popup";
 import Divider from "./Divider";
-import * as animationData2 from "@/lottie-animations/Animation-1728070469192.json";
 import Lottie from "react-lottie";
+import * as animationData2 from "@/lottie-animations/Animation-1728070469192.json";
 
 const RewardsPopup: FC<RewardsPopupProps> = ({ isOpen, onClose }) => {
   return (
     <Popup
       isOpen={isOpen}
       onClose={onClose}
-      className="max-w-[750px] max-h-[500px] bg-[url('/images/Group1000002084qwlkejrkqwbeqvb-min.png')] bg-no-repeat bg-contain bg-center"
+      className="max-w-[750px] max-h-[550px] md:max-h-[500px] bg-[url('/images/Group1000002084qwlkejrkqwbeqvb-min.png')] bg-no-repeat bg-cover bg-center"
     >
       <div className="text-[#F3BA2F] text-center flex flex-col items-center justify-center h-full relative">
         <div className="absolute top-0 left-0 right-0 w-full h-full">

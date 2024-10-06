@@ -27,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Infinite8 Task</title>
         <link rel="preload" href="/images/Leveluppopup-min.jpg" as="image" type="image/jpg" />
         <link rel="preload" href="/images/Group1000002084qwlkejrkqwbeqvb-min.png" as="image" type="image/png" />
       </head>

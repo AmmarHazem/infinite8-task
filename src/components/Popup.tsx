@@ -16,7 +16,7 @@ const Popup: FC<PopupProps> = ({ isOpen, children, className, onClose }) => {
           }}
           className={`fixed inset-0 z-50 w-screen h-screen m-auto ${className}`}
         >
-          <div className="w-full h-full overflow-y-scroll p-4 relative">
+          <div className="w-full h-full overflow-y-scroll px-4 py-6 md:py-4 relative">
             <button className="text-white absolute top-4 right-4 z-10" onClick={onClose}>
               <Image
                 src={"/images/Groupsalkdfjlkasdjfkasdbf1000002076.png"}
